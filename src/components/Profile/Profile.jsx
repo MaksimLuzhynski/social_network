@@ -7,7 +7,7 @@ import MyPosts from './MyPosts/MyPosts';
 const Profile = () => {
     return (
 
-        <div className={classes.content}>
+        <div>
             <div>
                 <img src="https://bipbap.ru/wp-content/uploads/2017/09/50dca6763731640fb4fa59a302daf612.jpg" />
             </div>
