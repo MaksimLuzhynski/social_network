@@ -2,25 +2,37 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import { NavLink } from 'react-router-dom';
 
+const DialogItem = (props) => {
+    return (
+        <div className={s.dialog + ' ' + s.active}>
+            <NavLink to={"/dialogs/" + props.id}>{props.name}</NavLink></div>
+    )
+}
+
+const MessageItem = (props) => {
+    return (
+    <div className={s.message}>{props.message}</div>
+    )
+}
 
 const Dialogs = (props) => {
     return (
         <div>
             <div className={s.dialogs}>
                 <div className={s.dialogsItems}>
-                    <div className={s.dialog}><NavLink to="/dialogs/1">Vilaly</NavLink></div>
-                    <div className={s.dialog}><NavLink to="/dialogs/2">Mark</NavLink></div>
-                    <div className={s.dialog}><NavLink to="/dialogs/3">John</NavLink></div>
-                    <div className={s.dialog}><NavLink to="/dialogs/4">Victor</NavLink></div>
-                    <div className={s.dialog}><NavLink to="/dialogs/5">Ales</NavLink></div>
-                    <div className={s.dialog}><NavLink to="/dialogs/6">Max</NavLink></div>
-                    <div className={s.dialog + ' ' + s.active}><NavLink to= "/dialogs/7">Mark</NavLink></div>
+                    <DialogItem name="Vilaly" id="1" />
+                    <DialogItem name="Mark" id="2" />
+                    <DialogItem name="John" id="3" />
+                    <DialogItem name="Victor" id="4" />
+                    <DialogItem name="Ales" id="5" />
+                    <DialogItem name="Max" id="6" />
+                    <DialogItem name="Marta" id="7" />
                 </div>
                 <div className={s.messages}>
-                    <div className={s.message}>Hello</div>
-                    <div className={s.message}>Bonjour</div>
-                    <div className={s.message}>How are you?</div>
-                    <div className={s.message}>Yo!!!</div>
+                    <MessageItem message="Bonjour"/>
+                    <MessageItem message="Hello"/>
+                    <MessageItem message="How are you?"/>
+                    <MessageItem message="Yo!!!"/>
                 </div>
             </div>
         </div>
